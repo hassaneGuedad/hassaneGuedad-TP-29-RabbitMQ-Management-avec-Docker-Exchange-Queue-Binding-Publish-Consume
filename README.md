@@ -1,4 +1,6 @@
 RabbitMQ Messaging avec Docker (Management UI)
+
+
 📌 Présentation
 
 Ce projet illustre la mise en place d’un broker de messages RabbitMQ à l’aide de Docker, ainsi que la manipulation des principaux concepts de messagerie via l’interface RabbitMQ Management.
@@ -6,7 +8,9 @@ Ce projet illustre la mise en place d’un broker de messages RabbitMQ à l’ai
 L’objectif est de démontrer le cycle complet d’un message :
 Exchange → Routing → Queue → Consumption, sans utiliser de code applicatif.
 
+
 🧩 Architecture utilisée
+
 
 Docker : isolation et déploiement rapide du broker
 
@@ -29,7 +33,11 @@ Producer
    v
 Consumer
 
+
+
 🚀 Démarrage rapide
+
+
 Lancer RabbitMQ avec Docker
 docker run -d \
   --name rabbit-server \
@@ -43,8 +51,12 @@ Interface web : http://localhost:15672
 
 Identifiants par défaut : guest / guest
 
+
 🧠 Concepts manipulés
+
+
 🔁 Exchange
+
 
 Un exchange reçoit les messages et décide vers quelles queues les rediriger.
 
@@ -52,7 +64,9 @@ Type utilisé : direct
 
 Routage basé sur la routing key
 
+
 📥 Queue
+
 
 Une queue stocke les messages jusqu’à leur consommation.
 
@@ -60,19 +74,27 @@ Type : classic
 
 Mode : durable
 
+
 🔗 Binding
+
+
 
 Le binding relie un exchange à une queue.
 
 Associe une routing key à une destination
 
+
 🛠️ Configuration fonctionnelle
+
 Élément	Nom utilisé	Configuration
 Exchange	2iteExchange	direct, durable
 Queue	2iteQueue	classic, durable
 Binding	Exchange → Queue	routing key vide
 Payload	Message texte	UTF-8
+
+
 ✉️ Publication des messages
+
 
 Les messages sont publiés depuis l’interface web de RabbitMQ :
 
@@ -88,6 +110,7 @@ le découplage entre producteurs et consommateurs
 
 une meilleure fiabilité du transport de données
 
+
 📖 Consommation des messages
 
 Les messages sont récupérés directement depuis la queue via l’UI :
@@ -98,6 +121,7 @@ Mode NACK + requeue : remise en file (tests)
 
 Cela permet de visualiser le comportement réel d’une file de messages.
 
+
 ✅ Résultats obtenus
 
 RabbitMQ opérationnel dans un conteneur Docker
@@ -107,6 +131,7 @@ Création et gestion des entités de messagerie
 Transmission réussie de messages
 
 Observation du flux et de l’état des messages
+
 
 🎯 Intérêt pédagogique
 
@@ -120,8 +145,8 @@ Découvrir l’administration d’un broker de messages
 
 Se préparer à une intégration backend (Spring, Node.js, etc.)
 
-👤 Auteur
 
+👤 Auteur
 Hassane Guedad
 Full-Stack Developer
 
